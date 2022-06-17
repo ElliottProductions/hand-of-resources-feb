@@ -7,9 +7,13 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('first bat test!', async () => {
+  it('/bats should return an array of bats', async () => {
     const res = await request(app).get('/bats');
-    expect(res.body[0]).toEqual(1);
+    expect(res.body[0]).toEqual({ 'id': '1', 'name': 'PARASTRELLUS HESPERUS', 'nickname': 'Canyon Bat' });
+  });
+  it('/bats/1 should return an array of bats', async () => {
+    const res = await request(app).get('/bats/1');
+    expect(res.body).toEqual({ 'id': '1', 'name': 'PARASTRELLUS HESPERUS', 'nickname': 'Canyon Bat' });
   });
   afterAll(() => {
     pool.end();
