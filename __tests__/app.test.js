@@ -7,8 +7,9 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('example test - delete me!', () => {
-    expect(1).toEqual(1);
+  it('first bat test!', async () => {
+    const res = await request(app).get('/bats');
+    expect(res.body[0]).toEqual(1);
   });
   afterAll(() => {
     pool.end();
