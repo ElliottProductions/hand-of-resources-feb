@@ -15,7 +15,7 @@ describe('backend-express-template routes', () => {
     const res = await request(app).get('/salamanders/2');
     expect(res.body).toEqual({ 'id': '2', 'name': 'NEURERGUS KAISERI', 'nickname': 'Iranian Harlequin Newt' });
   });
-  it.skip('POST /salamanders should create a new salamander', async () => {
+  it('POST /salamanders should creates a new salamander', async () => {
     const res = await request(app).post('/salamanders').send({ name: 'FUZZIUS BATUS', nickname: 'Fuzzy Bat' });
     expect(res.body.name).toEqual('FUZZIUS BATUS');
   });
