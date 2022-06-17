@@ -7,23 +7,23 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it('/salamanders should return an array of salamanders', async () => {
+  it.skip('/salamanders should return an array of salamanders', async () => {
     const res = await request(app).get('/salamanders');
     expect(res.body[0]).toEqual({ 'id': '1', 'name': 'PLEURODELES WALTL', 'nickname': 'Spanish Ribbed Newt' });
   });
-  it('/salamanders/2 should return a salamander based on id', async () => {
+  it.skip('/salamanders/2 should return a salamander based on id', async () => {
     const res = await request(app).get('/salamanders/2');
     expect(res.body).toEqual({ 'id': '2', 'name': 'NEURERGUS KAISERI', 'nickname': 'Iranian Harlequin Newt' });
   });
-  it('POST /salamanders should creates a new salamander', async () => {
+  it.skip('POST /salamanders should creates a new salamander', async () => {
     const res = await request(app).post('/salamanders').send({ name: 'FUZZIUS BATUS', nickname: 'Fuzzy Bat' });
     expect(res.body.name).toEqual('FUZZIUS BATUS');
   });
-  it('POST /salamanders/:id should update a salamander', async () => {
+  it.skip('POST /salamanders/:id should update a salamander', async () => {
     const res = await request(app).put('/salamanders/1').send({ name: 'FUZZIUS ROUNDUS', nickname: 'Fuzzy Round Bat' });
     expect(res.body.name).toEqual('FUZZIUS ROUNDUS');
   });
-  it('DELETE /salamanders/:id should delete a salamander', async () => {
+  it.skip('DELETE /salamanders/:id should delete a salamander', async () => {
     const res = await request(app).delete('/salamanders/2');
     expect(res.status).toEqual(200);
 
