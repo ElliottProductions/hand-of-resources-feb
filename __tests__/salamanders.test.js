@@ -13,7 +13,7 @@ describe('backend-express-template routes', () => {
   });
   it('/salamanders/2 should return a salamander based on id', async () => {
     const res = await request(app).get('/salamanders/2');
-    expect(res.body).toEqual({ 'id': '2', 'name': 'DESMODUS ROTUNDUS', 'nickname': 'Common Vampure Bat' });
+    expect(res.body).toEqual({ 'id': '2', 'name': 'NEURERGUS KAISERI', 'nickname': 'Iranian Harlequin Newt' });
   });
   it.skip('POST /salamanders should create a new salamander', async () => {
     const res = await request(app).post('/salamanders').send({ name: 'FUZZIUS BATUS', nickname: 'Fuzzy Bat' });
