@@ -23,7 +23,7 @@ describe('backend-express-template routes', () => {
     const res = await request(app).put('/salamanders/1').send({ name: 'FUZZIUS ROUNDUS', nickname: 'Fuzzy Round Bat' });
     expect(res.body.name).toEqual('FUZZIUS ROUNDUS');
   });
-  it.skip('DELETE /salamanders/:id should delete a salamander', async () => {
+  it('DELETE /salamanders/:id should delete a salamander', async () => {
     const res = await request(app).delete('/salamanders/2');
     expect(res.status).toEqual(200);
 
