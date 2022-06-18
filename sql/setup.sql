@@ -3,6 +3,7 @@
 DROP TABLE IF EXISTS bats CASCADE;
 DROP TABLE IF EXISTS salamanders CASCADE;
 DROP TABLE IF EXISTS monotremes;
+DROP TABLE IF EXISTS homonids;
 
 CREATE TABLE bats (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -36,3 +37,14 @@ INSERT INTO monotremes (name, nickname) VALUES
 ('Ornithorhynchus anatinus', 'Duck-billed Platypus'),
 ('Tachyglossus bruijnii', 'Western long-beaked echidna'),
 ('Zaglossus attenboroughi', 'Sir Davids long-beaked echidna');
+
+CREATE TABLE homonids (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    nickname VARCHAR
+);
+
+INSERT INTO homonids (name, nickname) VALUES
+('Homo sapiens', 'Human'),
+('Homo erectus', 'Upright Man'),
+('Homo neanderthalensis', 'Neadnerthal');
