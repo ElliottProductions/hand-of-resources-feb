@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS bats CASCADE;
 DROP TABLE IF EXISTS salamanders CASCADE;
 DROP TABLE IF EXISTS monotremes;
 DROP TABLE IF EXISTS homonids;
+DROP TABLE IF EXISTS presidents;
 
 CREATE TABLE bats (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -48,3 +49,14 @@ INSERT INTO homonids (name, nickname) VALUES
 ('Homo sapiens', 'Human'),
 ('Homo erectus', 'Upright Man'),
 ('Homo neanderthalensis', 'Neadnerthal');
+
+CREATE TABLE presidents (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name VARCHAR,
+    nickname VARCHAR
+);
+
+INSERT INTO presidents (name, nickname) VALUES
+('Richard Milhous Nixon', 'Tricky Dick'),
+('George W. Bush', 'Dubya'),
+('John Fitzgerald Kennedy', 'Jack');
