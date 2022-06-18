@@ -7,23 +7,23 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it.skip('/homonid should return an array of homonids', async () => {
+  it('/homonid should return an array of homonids', async () => {
     const res = await request(app).get('/homonids');
     expect(res.body[0]).toEqual({ 'id': '1', 'name': 'Homo sapiens', 'nickname': 'Human' });
   });
-  it.skip('/homonids/2 should return a homonid based on id', async () => {
+  it('/homonids/2 should return a homonid based on id', async () => {
     const res = await request(app).get('/homonids/2');
     expect(res.body).toEqual({ 'id': '2', 'name': 'Homo erectus', 'nickname': 'Upright Man' });
   });
-  it.skip('POST /homonids should creates a new homonid', async () => {
+  it('POST /homonids should creates a new homonid', async () => {
     const res = await request(app).post('/homonids').send({ name: 'FUZZIUS BATUS', nickname: 'Fuzzy Bat' });
     expect(res.body.name).toEqual('FUZZIUS BATUS');
   });
-  it.skip('POST /homonids/:id should update a homonid', async () => {
+  it('POST /homonids/:id should update a homonid', async () => {
     const res = await request(app).put('/homonids/1').send({ name: 'FUZZIUS ROUNDUS', nickname: 'Fuzzy Round Bat' });
     expect(res.body.name).toEqual('FUZZIUS ROUNDUS');
   });
-  it.skip('DELETE /homonids/:id should delete a homonid', async () => {
+  it('DELETE /homonids/:id should delete a homonid', async () => {
     const res = await request(app).delete('/homonids/2');
     expect(res.status).toEqual(200);
 

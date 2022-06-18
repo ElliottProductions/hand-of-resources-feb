@@ -7,23 +7,23 @@ describe('backend-express-template routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
-  it.skip('/monotremes should return an array of monotremes', async () => {
+  it('/monotremes should return an array of monotremes', async () => {
     const res = await request(app).get('/monotremes');
     expect(res.body[0]).toEqual({ 'id': '1', 'name': 'Ornithorhynchus anatinus', 'nickname': 'Duck-billed Platypus' });
   });
-  it.skip('/monotremes/2 should return a monotreme based on id', async () => {
+  it('/monotremes/2 should return a monotreme based on id', async () => {
     const res = await request(app).get('/monotremes/2');
     expect(res.body).toEqual({ 'id': '2', 'name': 'Tachyglossus bruijnii', 'nickname': 'Western long-beaked echidna' });
   });
-  it.skip('POST /monotremes should creates a new monotreme', async () => {
+  it('POST /monotremes should creates a new monotreme', async () => {
     const res = await request(app).post('/monotremes').send({ name: 'FUZZIUS BATUS', nickname: 'Fuzzy Bat' });
     expect(res.body.name).toEqual('FUZZIUS BATUS');
   });
-  it.skip('POST /monotremes/:id should update a monotreme', async () => {
+  it('POST /monotremes/:id should update a monotreme', async () => {
     const res = await request(app).put('/monotremes/1').send({ name: 'FUZZIUS ROUNDUS', nickname: 'Fuzzy Round Bat' });
     expect(res.body.name).toEqual('FUZZIUS ROUNDUS');
   });
-  it.skip('DELETE /monotremes/:id should delete a monotreme', async () => {
+  it('DELETE /monotremes/:id should delete a monotreme', async () => {
     const res = await request(app).delete('/monotremes/2');
     expect(res.status).toEqual(200);
 
